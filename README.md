@@ -1,21 +1,22 @@
-# Eco Adventure Brasil
+# Eco Adventure Brasil — Aplicativo instalável
 
-Jogo 2D em HTML, CSS e JavaScript com temática de reciclagem no Brasil.
+Jogo de aventura e reciclagem feito em HTML/Canvas. Adaptado ao modelo do aplicativo NOVA: um site instalável como PWA no Windows, Android e iPhone, além de um iniciador Windows que abre em janela própria.
 
-## Instalação no Windows
+## Publicação no GitHub Pages
+1. Baixe o arquivo `EcoAdventureBrasil-Modelo-NOVA-PC-Celular.zip` fornecido nesta conversa e extraia.
+2. Abra o repositório, clique em **Add file > Upload files** e envie o conteúdo extraído, **incluindo os arquivos da pasta `icons`**. Não envie o ZIP sem extrair. Selecione a pasta/arquivos de forma a manter os caminhos relativos.
+3. Em **Settings > Pages > Build and deployment**, escolha **Deploy from a branch**, branch `main`, pasta `/(root)`, e salve.
+4. Acesse https://mezzonfelipe-cell.github.io/EcoAdventureBrasil/ quando a publicação estiver ativa.
 
-Para criar um atalho no desktop, baixe o pacote de instalação disponibilizado junto com a versão do jogo, extraia o ZIP e execute `INSTALAR-WINDOWS.cmd`. O instalador copia `index.html` para `%LOCALAPPDATA%\EcoAdventureBrasil` e cria o atalho **Eco Adventure Brasil**.
+## Instalar
+- **Windows (pelo site):** abra pelo Chrome ou Edge e use **Instalar aplicativo**. O jogo abre em uma janela própria.
+- **Windows (sem internet):** extraia o pacote e execute `INSTALAR-WINDOWS.cmd`; será criado o atalho **Eco Adventure Brasil** na área de trabalho, abrindo o jogo em janela do navegador sem abas. Não é necessário Node ou Python.
+- **Android:** abra o site pelo Chrome e toque em **Instalar aplicativo** ou escolha **Instalar app** no menu do navegador.
+- **iPhone:** abra o site pelo Safari e escolha **Compartilhar > Adicionar à Tela de Início**.
 
-## Como adicionar a versão mais recente do jogo
+O modo PWA requer HTTPS (GitHub Pages) ou localhost. Abrir `index.html` diretamente por arquivo não registra o service worker. Após a primeira visita com internet, os arquivos usados pelo jogo são guardados para uso offline.
 
-O HTML original ainda precisa ser enviado ao repositório: use **Add file > Upload files** na página do GitHub e envie o arquivo de jogo renomeado como `index.html` (raiz do repositório). Envie também `EcoAdventureBrasil.ico` caso queira o ícone personalizado no atalho. Os arquivos do instalador já estão neste repositório.
+## Atualizações
+Republique os arquivos modificados e altere o identificador `CACHE` em `sw.js` quando lançar uma versão nova. Os aparelhos instalados receberão a nova versão quando conectados e o cache for atualizado.
 
-Depois, é possível baixar o repositório pelo botão **Code > Download ZIP**, extrair tudo e executar `INSTALAR-WINDOWS.cmd`.
-
-O jogo é autocontido e funciona offline em um navegador moderno. O instalador não modifica os arquivos do sistema e não exige Node.js ou Python.
-
-## Remover
-
-Execute `DESINSTALAR-WINDOWS.cmd` na pasta extraída do projeto para excluir o atalho e a cópia instalada.
-
-> Nota: o código HTML do jogo é grande (aproximadamente 5,3 MB). Os scripts de instalação foram adicionados primeiro. O arquivo `index.html` deve ser enviado separadamente para completar o conteúdo no GitHub.
+Não inclui nenhum recurso de login ou conexão ao serviço de estoque NOVA, somente o **modelo de distribuição como aplicativo**.
