@@ -1,22 +1,25 @@
 # Eco Adventure Brasil — Aplicativo instalável
 
-Jogo de aventura e reciclagem feito em HTML/Canvas. Adaptado ao modelo do aplicativo NOVA: um site instalável como PWA no Windows, Android e iPhone, além de um iniciador Windows que abre em janela própria.
+Jogo de aventura e reciclagem feito em HTML/Canvas, distribuído no mesmo modelo do aplicativo NOVA: um site instalável como PWA no Windows, Android e iPhone, além de um iniciador Windows que abre o jogo em janela própria.
+
+Site: https://mezzonfelipe-cell.github.io/EcoAdventureBrasil/
+
+## Arquivos
+- `index.html` — o jogo completo (música e imagens já embutidas), com o botão **📲 Instalar app**.
+- `manifest.webmanifest`, `sw.js`, `instalar.js` — instalação como aplicativo e uso offline.
+- `icons/` — ícones do aplicativo (Android, iPhone, Windows).
+- `EcoAdventureBrasil.ico`, `INSTALAR-WINDOWS.cmd`, `abrir-jogo.cmd`, `DESINSTALAR-WINDOWS.cmd` — instalação offline no Windows.
 
 ## Publicação no GitHub Pages
-1. Baixe o arquivo `EcoAdventureBrasil-Modelo-NOVA-PC-Celular.zip` fornecido nesta conversa e extraia.
-2. Abra o repositório, clique em **Add file > Upload files** e envie o conteúdo extraído, **incluindo os arquivos da pasta `icons`**. Não envie o ZIP sem extrair. Selecione a pasta/arquivos de forma a manter os caminhos relativos.
-3. Em **Settings > Pages > Build and deployment**, escolha **Deploy from a branch**, branch `main`, pasta `/(root)`, e salve.
-4. Acesse https://mezzonfelipe-cell.github.io/EcoAdventureBrasil/ quando a publicação estiver ativa.
+Em **Settings > Pages > Build and deployment**, escolha **Deploy from a branch**, branch `main`, pasta `/(root)`, e salve.
 
 ## Instalar
-- **Windows (pelo site):** abra pelo Chrome ou Edge e use **Instalar aplicativo**. O jogo abre em uma janela própria.
-- **Windows (sem internet):** extraia o pacote e execute `INSTALAR-WINDOWS.cmd`; será criado o atalho **Eco Adventure Brasil** na área de trabalho, abrindo o jogo em janela do navegador sem abas. Não é necessário Node ou Python.
-- **Android:** abra o site pelo Chrome e toque em **Instalar aplicativo** ou escolha **Instalar app** no menu do navegador.
+- **Windows (pelo site):** abra pelo Chrome ou Edge e toque em **📲 Instalar app** (ou no ícone de instalação da barra de endereço). O jogo abre em uma janela própria.
+- **Windows (sem internet):** em **Code > Download ZIP**, baixe e extraia o repositório e execute `INSTALAR-WINDOWS.cmd`. Será criado o atalho **Eco Adventure Brasil** na área de trabalho. Não é necessário Node ou Python.
+- **Android:** abra o site pelo Chrome e toque em **📲 Instalar app** ou escolha **Instalar app** no menu ⋮.
 - **iPhone:** abra o site pelo Safari e escolha **Compartilhar > Adicionar à Tela de Início**.
 
-O modo PWA requer HTTPS (GitHub Pages) ou localhost. Abrir `index.html` diretamente por arquivo não registra o service worker. Após a primeira visita com internet, os arquivos usados pelo jogo são guardados para uso offline.
+O modo PWA requer HTTPS (GitHub Pages) ou localhost. Abrir `index.html` direto do arquivo não registra o service worker. Após a primeira visita com internet, o jogo fica guardado para uso offline.
 
 ## Atualizações
-Republique os arquivos modificados e altere o identificador `CACHE` em `sw.js` quando lançar uma versão nova. Os aparelhos instalados receberão a nova versão quando conectados e o cache for atualizado.
-
-Não inclui nenhum recurso de login ou conexão ao serviço de estoque NOVA, somente o **modelo de distribuição como aplicativo**.
+A cada versão nova, altere o identificador `CACHE` em `sw.js` e o `?v=` do `instalar.js` no final do `index.html` (use o mesmo número). Os aparelhos instalados recebem a versão nova na próxima vez que abrirem o jogo com internet.

@@ -3,6 +3,7 @@
   const modal=document.getElementById('app-install-modal');
   const info=document.getElementById('app-install-description');
   const confirm=document.getElementById('app-install-confirm');
+  if(!trigger||!modal)return;
   let deferred=null;
   const standalone=()=>window.matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
   const isiOS=/iPad|iPhone|iPod/.test(navigator.userAgent)||(/Macintosh/.test(navigator.userAgent)&&navigator.maxTouchPoints>1);
